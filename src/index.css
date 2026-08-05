@@ -11,9 +11,10 @@ body {
   /*For better font rendering on Firefox*/
 }
 
-.font-outfit {
+.font-logo {
   font-family: "Outfit", sans-serif;
-  font-weight: 600;
+  font-weight: 900;
+  font-size: 1.3rem;
 }
 
 :root {
@@ -60,4 +61,13 @@ body {
   background-image: linear-gradient(to right,
       var(--color-primary-start),
       var(--color-primary-end));
+}
+
+@utility text-primary-gradient {
+  background: linear-gradient(135deg,
+      var(--color-primary-start),
+      var(--color-primary-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
