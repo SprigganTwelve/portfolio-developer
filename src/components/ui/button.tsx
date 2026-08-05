@@ -3,7 +3,7 @@ import { cn } from "../../lib/cn";
 interface ButtonProps {
      children: React.ReactNode;
      onClick?: () => void;
-     variant?: "primary" | "black";
+     variant?: "primary" | "black" | "ghost";
      size?: "sm" | "md" | "lg" | "icon";
      className?: string;
      type?: "button" | "submit";
@@ -18,8 +18,9 @@ const Button: React.FC<ButtonProps> = ({
      type = "button",
 }) => {
      const variantStyles: Record<string, string> = {
-          primary: "bg-primary-gradient ",
-          black: "bg-foreground text-background hover:bg-background hover:text-foreground",
+          primary: "bg-primary-gradient shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
+          black: "bg-foreground text-background hover:bg-background hover:text-foreground shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
+          ghost: "border-none text-primary-gradient",
      };
      const sizeStyles: Record<string, string> = {
           md: "h-8 px-4 py-2.5 gap-2 text-sm",
@@ -30,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
                type={type}
                onClick={onClick}
                className={cn(
-                    "inline-flex items-center justify-center border-2 shadow-md font-bold cursor-pointer transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
+                    "inline-flex items-center justify-center border-2 font-bold cursor-pointer",
                     variantStyles[variant],
                     sizeStyles[size],
                     className,
