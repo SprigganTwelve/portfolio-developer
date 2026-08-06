@@ -18,8 +18,8 @@ const navLinks: { label: string; sectionId: string; navKey: NavPage }[] = [
 const Navbar = () => {
      const [menuOpen, setMenuOpen] = useState(false);
      return (
-          <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b-2")}>
-               <nav className="flex items-center justify-between px-4 py-2 h-12">
+          <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b-2">
+               <nav className={cn("flex items-center justify-between px-4 py-2 h-12", "max-w-7xl mx-auto")}>
                     {/* Logo */}
                     <button className="font-extrabold cursor-pointer uppercase font-logo">
                          <span className="text-primary-gradient">ZD</span>
