@@ -31,7 +31,7 @@ const Navbar = () => {
                          {navLinks.map((link) => (
                               <button
                                    key={link.navKey}
-                                   className="px-4 py-2 text-sm font-medium  transition-discrete duration-200 hover:text-primary-gradient hover:cursor-pointer"
+                                   className="px-4 py-2 text-sm font-medium transition-discrete duration-200 hover:text-primary-gradient hover:cursor-pointer"
                               >
                                    {link.label}
                               </button>
@@ -90,7 +90,7 @@ const Navbar = () => {
                                    return (
                                         <button
                                              key={link.navKey}
-                                             className="text-center py-2 font-body font-semibold text-base w-full"
+                                             className="text-center py-2 font-body font-semibold text-base w-full transition-discrete duration-200 hover:text-primary-gradient hover:cursor-pointer"
                                         >
                                              {link.label}
                                         </button>
