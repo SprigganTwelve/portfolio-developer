@@ -24,6 +24,7 @@ const Button: React.FC<ButtonProps> = ({
      };
      const sizeStyles: Record<string, string> = {
           md: "h-8 px-4 py-2.5 gap-2 text-sm",
+          lg: "h-10 px-6 py-3 gap-3 text-base",
           icon: "h-8 w-8 p-0 text-sm",
      };
      return (

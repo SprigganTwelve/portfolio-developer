@@ -5,10 +5,10 @@
 
 body {
   font-family: 'Stack Sans Notch', sans-serif;
-  -webkit-font-smoothing: antialiased;
   /*For better font rendering on WebKit browsers*/
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
   /*For better font rendering on Firefox*/
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .font-logo {
@@ -17,12 +17,24 @@ body {
   font-size: 1.3rem;
 }
 
+.font-display {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
 :root {
   --background: #f5f5f5ee;
   --foreground: #000000;
   --border: #000000;
   --primary-start: #FF0FD0;
   --primary-end: #57A3FF;
+  --muted: #555555;
 
   --nav-bg-scrolled: #FFFFFF;
 
@@ -38,6 +50,7 @@ body {
   --color-border: var(--border);
   --color-primary-start: var(--primary-start);
   --color-primary-end: var(--primary-end);
+  --color-muted: var(--muted);
 
   --shadow-md: var(--shadow-md);
   --shadow-lg: var(--shadow-lg);
@@ -49,7 +62,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground px-10;
   }
 
   html {
