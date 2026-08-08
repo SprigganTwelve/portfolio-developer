@@ -65,7 +65,7 @@ body {
   * {
     @apply border-border;
     /* for uniform ui scrollbar */
-    @apply [&::-webkit-scrollbar]:w-3.5 [&::-webkit-scrollbar-track]:bg-muted [&::-webkit-scrollbar-thumb]:bg-primary-start [&::-webkit-scrollbar-thumb:hover]:bg-primary-start/60;
+    @apply [&::-webkit-scrollbar]:w-3.5 [&::-webkit-scrollbar-track]:bg-primary-end/50 [&::-webkit-scrollbar-thumb]:bg-primary-start [&::-webkit-scrollbar-thumb:hover]:bg-primary-start/60;
     /* hide scrollbar for mobile sizes */
     @apply [&::-webkit-scrollbar]:hidden lg:[&::-webkit-scrollbar]:block
   }
