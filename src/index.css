@@ -40,6 +40,7 @@ body {
 
   --shadow-md: 3px 3px 0px #0A0A0A;
   --shadow-lg: 5px 5px 0px #0A0A0A;
+  --shadow-xl: 8px 8px 0px #0A0A0A;
 
   --pattern-pink: rgba(255, 15, 208, 0.13);
   --pattern-blue: rgba(87, 163, 255, 0.13);
@@ -57,6 +58,7 @@ body {
 
   --shadow-md: var(--shadow-md);
   --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
 }
 
 @layer base {

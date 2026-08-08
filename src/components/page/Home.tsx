@@ -1,25 +1,8 @@
+import { stats, techStack } from "../../data/data";
 import Button from "../ui/button";
+import Card from "../ui/card";
 
 const Home = () => {
-     const techStack = [
-          "React",
-          "TypeScript",
-          "Symfony",
-          "PHP8",
-          "Flutter",
-          "Node.js",
-          "React Native",
-          "PostgreSQL",
-          "Figma",
-          "Git",
-          "Express",
-          "MySQL",
-          "PostgreSQL",
-          "Firebase",
-          "Next.js",
-          "Tailwind",
-     ];
-
      return (
           <main>
                {/* HERO Section */}
@@ -97,7 +80,7 @@ const Home = () => {
                     </div>
                </section>
 
-               {/* ── TECHSTACK Marquee ── */}
+               {/* TECHSTACK Marquee */}
                <div className="bg-black overflow-hidden py-3">
                     <div className="marquee-track">
                          {[...techStack, ...techStack].map((tech, i) => {
@@ -121,6 +104,41 @@ const Home = () => {
                          })}
                     </div>
                </div>
+
+               {/* STATS */}
+               <section className="sq-pattern py-12">
+                    <div className="max-w-7xl mx-auto px-4">
+                         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                              {stats.map((stat, i) => {
+                                   const colors = [
+                                        "var(--primary-start)",
+                                        "var(--primary-end)",
+                                        "var(--primary-start)",
+                                        "var(--primary-end)",
+                                   ];
+                                   return (
+                                        <Card
+                                             className="text-center"
+                                             hover={true}
+                                             key={i}
+                                             style={{ borderColor: colors[i] }}
+                                        >
+                                             <div
+                                                  className="font-display text-2xl md:text-3xl mb-1 leading-tight"
+                                                  style={{ color: colors[i] }}
+                                             >
+                                                  {stat.value}
+                                             </div>
+                                             <div className="font-semibold text-sm md:text-base text-gray-800 mb-1">
+                                                  {stat.label}
+                                             </div>
+                                             <div className="text-xs text-muted">{stat.sub}</div>
+                                        </Card>
+                                   );
+                              })}
+                         </div>
+                    </div>
+               </section>
           </main>
      );
 };
