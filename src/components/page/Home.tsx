@@ -1,13 +1,31 @@
 import Button from "../ui/button";
 
 const Home = () => {
+     const techStack = [
+          "React",
+          "TypeScript",
+          "Symfony",
+          "PHP8",
+          "Flutter",
+          "Node.js",
+          "React Native",
+          "PostgreSQL",
+          "Figma",
+          "Git",
+          "Express",
+          "MySQL",
+          "PostgreSQL",
+          "Firebase",
+          "Next.js",
+          "Tailwind",
+     ];
+
      return (
           <main>
                {/* HERO Section */}
                <section
                     id="home"
-                    className="sq-pattern min-h-screen flex items-center"
-                    style={{ paddingTop: "80px" }}
+                    className="sq-pattern min-h-screen flex items-center pt-20 pb-5"
                     aria-label="Présentation"
                >
                     <div className="max-w-7xl mx-auto px-4 py-5 w-full">
@@ -78,6 +96,31 @@ const Home = () => {
                          </div>
                     </div>
                </section>
+
+               {/* ── TECHSTACK Marquee ── */}
+               <div className="bg-black overflow-hidden py-3">
+                    <div className="marquee-track">
+                         {[...techStack, ...techStack].map((tech, i) => {
+                              const skillColor =
+                                   i % 3 === 0
+                                        ? "var(--color-primary-start)"
+                                        : i % 3 === 1
+                                          ? "var(--color-primary-end)"
+                                          : "var(--color-white)";
+                              return (
+                                   <span
+                                        key={i}
+                                        className="font-display text-sm font-black px-6 whitespace-nowrap"
+                                        style={{
+                                             color: skillColor,
+                                        }}
+                                   >
+                                        {tech} ✦
+                                   </span>
+                              );
+                         })}
+                    </div>
+               </div>
           </main>
      );
 };

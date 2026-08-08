@@ -41,6 +41,9 @@ body {
   --shadow-md: 3px 3px 0px #0A0A0A;
   --shadow-lg: 5px 5px 0px #0A0A0A;
 
+  --pattern-pink: rgba(255, 15, 208, 0.13);
+  --pattern-blue: rgba(87, 163, 255, 0.13);
+
   --font-size: 16px;
 }
 
@@ -59,10 +62,14 @@ body {
 @layer base {
   * {
     @apply border-border;
+    /* for uniform ui scrollbar */
+    @apply [&::-webkit-scrollbar]:w-3.5 [&::-webkit-scrollbar-track]:bg-muted [&::-webkit-scrollbar-thumb]:bg-primary-start [&::-webkit-scrollbar-thumb:hover]:bg-primary-start/60;
+    /* hide scrollbar for mobile sizes */
+    @apply [&::-webkit-scrollbar]:hidden lg:[&::-webkit-scrollbar]:block
   }
 
   body {
-    @apply bg-background text-foreground px-10;
+    @apply bg-background text-foreground;
   }
 
   html {
@@ -83,4 +90,33 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Square grid background pattern */
+.sq-pattern {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(var(--pattern-pink) 1px, transparent 1px),
+    linear-gradient(90deg, var(--pattern-blue) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-repeat: repeat;
+  background-position: 0 0;
+}
+
+/* Animations */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Marquee animation */
+.marquee-track {
+  animation: marquee 20s linear infinite;
+  display: flex;
+  width: max-content;
 }
