@@ -16,26 +16,28 @@ const TimelineCard = ({ entry, index }: { entry: TimelineEntry; index: number })
      return (
           <div className={cn("flex gap-4 md:gap-8", isLeft ? "md:flex-row" : "md:flex-row-reverse")}>
                {/* Card */}
-               <Card variant={style.variant} hover={true} className="flex-1 p-4">
-                    <div className="flex items-start justify-between mb-2.5">
-                         <Tag variant={style.variant} className="px-2.5 py-0.5">
-                              {style.label}
-                         </Tag>
-                         <span className="font-mono text-xs text-muted shrink-0 mt-1">{entry.period}</span>
-                    </div>
-                    <div className="mb-2.5">
-                         <h3 className="font-display font-black text-lg leading-tight mt-1">{entry.title}</h3>
-                         <p className="text-sm font-semibold text-muted font-body mt-0.5">{entry.organization}</p>
-                    </div>
-                    <p className="text-sm font-body text-gray-700 leading-relaxed mb-2.5">{entry.description}</p>
-                    <div className="flex flex-wrap gap-1.5 mb-1">
-                         {entry.tech.map((t) => (
-                              <Tag key={t} variant="muted" className="px-2.5 py-0.5">
-                                   {t}
+               <div className="flex-1">
+                    <Card variant={style.variant} hover={true} className="p-4">
+                         <div className="flex items-start justify-between mb-2.5">
+                              <Tag variant={style.variant} className="px-2.5 py-0.5">
+                                   {style.label}
                               </Tag>
-                         ))}
-                    </div>
-               </Card>
+                              <span className="font-mono text-xs text-muted shrink-0 mt-1">{entry.period}</span>
+                         </div>
+                         <div className="mb-2.5">
+                              <h3 className="font-display font-black text-lg leading-tight mt-1">{entry.title}</h3>
+                              <p className="text-sm font-semibold text-muted font-body mt-0.5">{entry.organization}</p>
+                         </div>
+                         <p className="text-sm font-body text-gray-700 leading-relaxed mb-2.5">{entry.description}</p>
+                         <div className="flex flex-wrap gap-1.5 mb-1">
+                              {entry.tech.map((t) => (
+                                   <Tag key={t} variant="muted" className="px-2.5 py-0.5">
+                                        {t}
+                                   </Tag>
+                              ))}
+                         </div>
+                    </Card>
+               </div>
 
                {/* Year marker */}
                <div className="flex flex-col items-center shrink-0" aria-hidden="true">
