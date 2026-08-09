@@ -3,7 +3,7 @@ import { timeline } from "../../data/data";
 
 const ExperienceTimeline = () => {
      return (
-          <section className="py-20">
+          <section className="py-15">
                <div className="max-w-5xl mx-auto px-4">
                     <div className="mb-9">
                          <p className="font-mono text-sm font-semibold text-muted mb-2"> {">"}- Expérience</p>
