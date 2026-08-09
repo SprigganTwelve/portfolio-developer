@@ -1,7 +1,7 @@
 import ExperienceTimeline from "./pagesections/ExperienceTimeline";
 import Hero from "./pagesections/Hero";
 import StatsSummary from "./pagesections/StatsSummary";
-import TechStackMarquee from "./pagesections/TechstackMarquee";
+import TechStackMarquee from "./pagesections/TechStackMarquee";
 
 const Home = () => {
      return (
