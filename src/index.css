@@ -19,7 +19,6 @@ body {
 
 .font-display {
   font-family: 'Outfit', sans-serif;
-  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
@@ -38,8 +37,9 @@ body {
 
   --nav-bg-scrolled: #FFFFFF;
 
-  --shadow-md: 3px 3px 0px #0A0A0A;
-  --shadow-lg: 5px 5px 0px #0A0A0A;
+  --shadow-sm: 2px 2px 0px #0A0A0A;
+  --shadow-md: 4px 4px 0px #0A0A0A;
+  --shadow-lg: 6px 6px 0px #0A0A0A;
   --shadow-xl: 8px 8px 0px #0A0A0A;
 
   --pattern-pink: rgba(255, 15, 208, 0.13);
@@ -56,6 +56,7 @@ body {
   --color-primary-end: var(--primary-end);
   --color-muted: var(--muted);
 
+  --shadow-sm: var(--shadow-sm);
   --shadow-md: var(--shadow-md);
   --shadow-lg: var(--shadow-lg);
   --shadow-xl: var(--shadow-xl);

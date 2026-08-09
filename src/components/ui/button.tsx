@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
      type = "button",
 }) => {
      const variantStyles: Record<string, string> = {
-          primary: "bg-primary-gradient shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
+          primary: "bg-primary-gradient shadow-md transition-all hover:text-background hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
           black: "bg-foreground text-background hover:bg-background hover:text-foreground shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
           ghost: "border-none text-primary-gradient",
      };

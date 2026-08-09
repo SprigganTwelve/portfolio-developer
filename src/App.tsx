@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Home from "./components/page/Home";
+import Home from "./page/Home";
 
 function App() {
      return (
