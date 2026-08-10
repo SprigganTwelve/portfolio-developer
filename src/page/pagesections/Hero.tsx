@@ -19,7 +19,7 @@ const Hero = () => {
 
                               <h1 className="font-display text-5xl md:text-7xl leading-[1.05] mb-4">
                                    <span className="text-primary-gradient tracking-tight font-black">Zouayobo </span>
-                                   <span className="tracking-tight">DALI</span>
+                                   <span className="tracking-tighter">DALI</span>
                               </h1>
 
                               <div className="text-xl md:text-2xl font-semibold mb-5 inline-block bg-primary-start shadow-md border-2 px-4 py-1">

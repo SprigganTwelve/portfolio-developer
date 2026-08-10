@@ -66,7 +66,7 @@ body {
   * {
     @apply border-border;
     /* for uniform ui scrollbar */
-    @apply [&::-webkit-scrollbar]:w-3.5 [&::-webkit-scrollbar-track]:bg-primary-end/50 [&::-webkit-scrollbar-thumb]:bg-primary-start [&::-webkit-scrollbar-thumb:hover]:bg-primary-start/60;
+    @apply [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-foreground [&::-webkit-scrollbar-thumb:hover]:bg-primary-start;
     /* hide scrollbar for mobile sizes */
     @apply [&::-webkit-scrollbar]:hidden lg:[&::-webkit-scrollbar]:block
   }
@@ -122,4 +122,10 @@ body {
   animation: marquee 20s linear infinite;
   display: flex;
   width: max-content;
+}
+
+.accent-line {
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary-start), var(--color-primary-end));
+  border: none;
 }
