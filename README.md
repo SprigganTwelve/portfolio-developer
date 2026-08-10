@@ -2,7 +2,7 @@
 
 Le site présente mon parcours, mes compétences, mes expériences, mes projets ainsi que ma veille technologique.
 
-## 🚀 Installation
+## Installation
 
 ```bash
 git clone https://github.com/SprigganTwelve/portfolio-developer.git
@@ -17,13 +17,13 @@ Le projet sera accessible sur :
 http://localhost:5173/
 ```
 
-## 📌 Status
+## Status
 
 🚧 **En développement**
 
 Le portfolio est actuellement en cours de conception et de développement. Fait principalement avec les technologies React + Vite, TailwindCSS, et TypeScript.
 
-## 👤 Auteur
+## Auteur
 
 **Zouayobo DALI**
 
