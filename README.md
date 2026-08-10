@@ -19,7 +19,7 @@ http://localhost:5173/
 
 ## Status
 
-🚧 **En développement**
+**En développement**
 
 Le portfolio est actuellement en cours de conception et de développement. Fait principalement avec les technologies React + Vite, TailwindCSS, et TypeScript.
 
