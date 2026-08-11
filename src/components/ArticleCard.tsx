@@ -23,7 +23,7 @@ const ArticleCard = ({ article, onView }: { article: Article; onView: () => void
                <div className="p-5 flex flex-col flex-1 gap-4">
                     <div className="flex flex-wrap gap-1.5">
                          {article.categories.map((c) => (
-                              <Tag key={c} variant="pink" className="px-2.5 py-0.5">
+                              <Tag key={c} variant="pink">
                                    {c}
                               </Tag>
                          ))}
@@ -32,7 +32,7 @@ const ArticleCard = ({ article, onView }: { article: Article; onView: () => void
                     <p className="text-sm text-muted font-body flex-1 leading-relaxed">{article.summary}</p>
                     <div className="flex items-center justify-between text-xs text-muted font-mono">
                          <span>{dateFormatted}</span>
-                         <span>⏱ {article.readTime} min</span>
+                         <span>⏱ {article.readingTime} min</span>
                     </div>
                     <Button onClick={onView}>Lire l'article →</Button>
                </div>

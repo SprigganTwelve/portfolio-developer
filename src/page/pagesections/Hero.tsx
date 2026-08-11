@@ -9,7 +9,7 @@ const Hero = () => {
                          {/* Text content */}
                          <div>
                               {/* Status tag */}
-                              <Tag variant="blue" className="mb-3">
+                              <Tag variant="blue" className="mb-3 px-4 py-1.5">
                                    <span
                                         className="bg-green-300 inline-block rounded-full w-2 h-2"
                                         aria-hidden="true"

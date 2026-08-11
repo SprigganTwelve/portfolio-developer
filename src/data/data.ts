@@ -1,3 +1,5 @@
+import tailwindContent from "./articles/tailwind-css.md?raw";
+
 export const techStack = [
      "React",
      "TypeScript",
@@ -89,15 +91,15 @@ export interface TimelineEntry {
 
 export const articles: Article[] = [
      {
-          id: "react-19-nouveautes",
-          title: "React 19 : Les nouveautés qui changent tout",
-          date: "2024-11-12",
-          readTime: 8,
-          categories: ["React", "JavaScript"],
-          summary: "Découvrez les fonctionnalités majeures de React 19 : Actions, hooks useFormStatus, useOptimistic, use() et la nouvelle gestion des ressources.",
-          imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop&auto=format",
-          techs: ["React", "TypeScript", "JavaScript"],
-          content: ``,
+          id: "tailwind-css-20-80",
+          title: "Tailwind CSS : les 20 % à connaître pour maîtriser 80 % du framework",
+          date: "2026-08-11",
+          readingTime: 10,
+          categories: ["Front-End"],
+          summary: "Découvrez les fondamentaux de Tailwind CSS, les concepts essentiels à maîtriser avec React, ses avantages face au CSS classique et les enjeux actuels de Tailwind Labs face à l’essor de l’IA.",
+          imageUrl: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Dc8tcF_RAaw0DWiK",
+          tags: ["TailwindCSS", "React", "TypeScript"],
+          content: tailwindContent,
      },
 ];
 
@@ -105,10 +107,10 @@ export interface Article {
      id: string;
      title: string;
      date: string;
-     readTime: number;
+     readingTime: number;
      categories: string[];
      summary: string;
      content: string;
      imageUrl: string;
-     techs: string[];
+     tags: string[];
 }

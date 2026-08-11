@@ -20,7 +20,13 @@ function App() {
           <div className="min-h-screen bg-background">
                <Navbar onToggleDark={() => navigate("404")} onNavigate={(page) => navigate(page)} />
                {route.page === "home" && <Home onViewArticle={(id) => navigate("article", id)} onNavigate={navigate} />}
-               {route.page === "article" && <ArticlePage />}
+               {route.page === "article" && (
+                    <ArticlePage
+                         articleId={route.id}
+                         onBack={() => navigate("home")}
+                         onViewArticle={(id) => navigate("article", id)}
+                    />
+               )}
                {route.page === "404" && <NotFoundPage />}
                <Footer />
           </div>

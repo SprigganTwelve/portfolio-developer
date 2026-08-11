@@ -17,7 +17,7 @@ const Tag: React.FC<TagProps> = ({ children, className, variant = "blue" }) => {
      return (
           <div
                className={cn(
-                    "font-mono px-4 py-1.5 inline-flex items-center gap-2 text-xs border-2",
+                    "font-mono px-2.5 py-0.5 inline-flex items-center gap-2 text-xs border-2",
                     variants[variant],
                     className,
                )}

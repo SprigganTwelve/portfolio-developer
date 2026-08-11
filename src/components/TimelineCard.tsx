@@ -19,9 +19,7 @@ const TimelineCard = ({ entry, index }: { entry: TimelineEntry; index: number })
                <div className="flex-1">
                     <Card variant={style.variant} hover={true} className="p-4">
                          <div className="flex items-start justify-between mb-2.5">
-                              <Tag variant={style.variant} className="px-2.5 py-0.5">
-                                   {style.label}
-                              </Tag>
+                              <Tag variant={style.variant}>{style.label}</Tag>
                               <span className="font-mono text-xs text-muted shrink-0 mt-1">{entry.period}</span>
                          </div>
                          <div className="mb-2.5">
@@ -31,7 +29,7 @@ const TimelineCard = ({ entry, index }: { entry: TimelineEntry; index: number })
                          <p className="text-sm font-body text-gray-700 leading-relaxed mb-2.5">{entry.description}</p>
                          <div className="flex flex-wrap gap-1.5 mb-1">
                               {entry.tech.map((t) => (
-                                   <Tag key={t} variant="muted" className="px-2.5 py-0.5">
+                                   <Tag key={t} variant="muted">
                                         {t}
                                    </Tag>
                               ))}
