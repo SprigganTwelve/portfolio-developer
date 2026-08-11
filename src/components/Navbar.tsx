@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import { cn } from "../lib/cn";
 import Button from "./ui/button";
 
+interface NavbarProps {
+     onNavigate: (page: NavPage) => void;
+     onToggleDark: () => void;
+}
+
 type NavPage = "home" | "projects" | "skills" | "parcours" | "veille" | "about" | "contact" | "cv";
 
 const navLinks: { label: string; sectionId: string; navKey: NavPage }[] = [
@@ -15,7 +20,7 @@ const navLinks: { label: string; sectionId: string; navKey: NavPage }[] = [
      { label: "Contact", sectionId: "contact", navKey: "contact" },
 ];
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ onNavigate, onToggleDark }) => {
      const [menuOpen, setMenuOpen] = useState(false);
      const [scrolled, setScrolled] = useState(false);
 
@@ -35,7 +40,10 @@ const Navbar = () => {
           >
                <nav className={cn("flex items-center justify-between px-4 py-2 h-12", "max-w-7xl mx-auto")}>
                     {/* Logo */}
-                    <button className="font-extrabold cursor-pointer uppercase font-logo">
+                    <button
+                         className="font-extrabold cursor-pointer uppercase font-logo"
+                         onClick={() => onNavigate("home")}
+                    >
                          <span className="text-primary-gradient">ZD</span>
                          <span>.</span>
                     </button>
@@ -54,7 +62,7 @@ const Navbar = () => {
 
                     {/* Desktop right actions */}
                     <div className="hidden md:flex items-center gap-2">
-                         <Button size="icon" variant="black">
+                         <Button size="icon" variant="black" onClick={onToggleDark}>
                               <Moon size={16} />
                          </Button>
                          <a
@@ -82,7 +90,7 @@ const Navbar = () => {
 
                     {/* Mobile actions */}
                     <div className="flex md:hidden items-center gap-2">
-                         <Button size="icon" variant="black">
+                         <Button size="icon" variant="black" onClick={onToggleDark}>
                               <Moon size={16} />
                          </Button>
 

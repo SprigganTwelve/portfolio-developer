@@ -86,3 +86,29 @@ export interface TimelineEntry {
      tech: string[];
      type: "education" | "work" | "goal";
 }
+
+export const articles: Article[] = [
+     {
+          id: "react-19-nouveautes",
+          title: "React 19 : Les nouveautés qui changent tout",
+          date: "2024-11-12",
+          readTime: 8,
+          categories: ["React", "JavaScript"],
+          summary: "Découvrez les fonctionnalités majeures de React 19 : Actions, hooks useFormStatus, useOptimistic, use() et la nouvelle gestion des ressources.",
+          imageUrl: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop&auto=format",
+          techs: ["React", "TypeScript", "JavaScript"],
+          content: ``,
+     },
+];
+
+export interface Article {
+     id: string;
+     title: string;
+     date: string;
+     readTime: number;
+     categories: string[];
+     summary: string;
+     content: string;
+     imageUrl: string;
+     techs: string[];
+}
