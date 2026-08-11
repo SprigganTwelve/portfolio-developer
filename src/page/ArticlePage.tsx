@@ -10,7 +10,7 @@ interface ArticlePageProps {
      onViewArticle: (id: string) => void;
 }
 
-const ArticlePage: React.FC<ArticlePageProps> = ({ articleId, onBack, onViewArticle }) => {
+const ArticlePage: React.FC<ArticlePageProps> = ({ articleId, onBack }) => {
      const article = articles.find((a) => a.id === articleId);
 
      if (!article) {
