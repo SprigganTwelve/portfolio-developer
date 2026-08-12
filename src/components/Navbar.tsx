@@ -1,12 +1,8 @@
 import { Moon } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { cn } from "../lib/cn";
 import Button from "./ui/button";
-
-interface NavbarProps {
-     onNavigate: (page: NavPage) => void;
-     onToggleDark: () => void;
-}
 
 type NavPage = "home" | "projects" | "skills" | "parcours" | "veille" | "about" | "contact" | "cv";
 
@@ -20,7 +16,9 @@ const navLinks: { label: string; sectionId: string; navKey: NavPage }[] = [
      { label: "Contact", sectionId: "contact", navKey: "contact" },
 ];
 
-const Navbar: React.FC<NavbarProps> = ({ onNavigate, onToggleDark }) => {
+const Navbar = () => {
+     const navigate = useNavigate();
+
      const [menuOpen, setMenuOpen] = useState(false);
      const [scrolled, setScrolled] = useState(false);
 
@@ -40,10 +38,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onToggleDark }) => {
           >
                <nav className={cn("flex items-center justify-between px-4 py-2 h-12", "max-w-7xl mx-auto")}>
                     {/* Logo */}
-                    <button
-                         className="font-extrabold cursor-pointer uppercase font-logo"
-                         onClick={() => onNavigate("home")}
-                    >
+                    <button className="font-extrabold cursor-pointer uppercase font-logo" onClick={() => navigate("/")}>
                          <span className="text-primary-gradient">ZD</span>
                          <span>.</span>
                     </button>
@@ -62,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onToggleDark }) => {
 
                     {/* Desktop right actions */}
                     <div className="hidden md:flex items-center gap-2">
-                         <Button size="icon" variant="black" onClick={onToggleDark}>
+                         <Button size="icon" variant="black" onClick={() => navigate("/404")}>
                               <Moon size={16} />
                          </Button>
                          <a
@@ -90,7 +85,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, onToggleDark }) => {
 
                     {/* Mobile actions */}
                     <div className="flex md:hidden items-center gap-2">
-                         <Button size="icon" variant="black" onClick={onToggleDark}>
+                         <Button size="icon" variant="black" onClick={() => navigate("/404")}>
                               <Moon size={16} />
                          </Button>
 

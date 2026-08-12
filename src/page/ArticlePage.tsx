@@ -1,17 +1,14 @@
 import ReactMarkdown from "react-markdown";
+import { useNavigate, useParams } from "react-router";
 import Button from "../components/ui/button";
 import Card from "../components/ui/card";
 import Tag from "../components/ui/tag";
 import { articles } from "../data/data";
 
-interface ArticlePageProps {
-     articleId: string;
-     onBack: () => void;
-     onViewArticle: (id: string) => void;
-}
-
-const ArticlePage: React.FC<ArticlePageProps> = ({ articleId, onBack }) => {
-     const article = articles.find((a) => a.id === articleId);
+const ArticlePage = () => {
+     const navigate = useNavigate();
+     let params = useParams();
+     const article = articles.find((a) => a.id === params.articleId);
 
      if (!article) {
           return (
@@ -19,7 +16,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ articleId, onBack }) => {
                     <Card className="p-12 text-center max-w-120">
                          <div className="font-display text-6xl mb-4 text-primary-gradient">404</div>
                          <h1 className="font-display text-2xl mb-4">Article introuvable</h1>
-                         <Button onClick={onBack} variant="black">
+                         <Button onClick={() => navigate("/")} variant="black">
                               ← Retour au blog
                          </Button>
                     </Card>
@@ -34,7 +31,7 @@ const ArticlePage: React.FC<ArticlePageProps> = ({ articleId, onBack }) => {
      });
 
      return (
-          <main className="min-h-screen pt-20">
+          <main className="min-h-screen pt-12">
                {/* Hero */}
                <section className="relative h-90 border-b-2">
                     <img

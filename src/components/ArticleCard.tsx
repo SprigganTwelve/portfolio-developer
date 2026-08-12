@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router";
 import type { Article } from "../data/data";
 import Button from "./ui/button";
 import Card from "./ui/card";
 import Tag from "./ui/tag";
 
-const ArticleCard = ({ article, onView }: { article: Article; onView: () => void }) => {
+const ArticleCard = ({ article }: { article: Article }) => {
+     const navigate = useNavigate();
      const dateFormatted = new Date(article.date).toLocaleDateString("fr-FR", {
           day: "numeric",
           month: "long",
@@ -34,7 +36,7 @@ const ArticleCard = ({ article, onView }: { article: Article; onView: () => void
                          <span>{dateFormatted}</span>
                          <span>⏱ {article.readingTime} min</span>
                     </div>
-                    <Button onClick={onView}>Lire l'article →</Button>
+                    <Button onClick={() => navigate(`/article/${article.id}`)}>Lire l'article →</Button>
                </div>
           </Card>
      );

@@ -1,35 +1,24 @@
-import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ArticlePage from "./page/ArticlePage";
 import Home from "./page/Home";
 import NotFoundPage from "./page/NotFoundPage";
 
-type Route = { page: "home" } | { page: "article"; id: string } | { page: "404" };
-
 function App() {
-     const [route, setRoute] = useState<Route>({ page: "home" });
-
-     const navigate = (page: string, id?: string) => {
-          if (page === "home") setRoute({ page: "home" });
-          else if (page === "article" && id) setRoute({ page: "article", id });
-          else setRoute({ page: "404" });
-     };
-
      return (
-          <div className="min-h-screen bg-background">
-               <Navbar onToggleDark={() => navigate("404")} onNavigate={(page) => navigate(page)} />
-               {route.page === "home" && <Home onViewArticle={(id) => navigate("article", id)} onNavigate={navigate} />}
-               {route.page === "article" && (
-                    <ArticlePage
-                         articleId={route.id}
-                         onBack={() => navigate("home")}
-                         onViewArticle={(id) => navigate("article", id)}
-                    />
-               )}
-               {route.page === "404" && <NotFoundPage />}
-               <Footer />
-          </div>
+          <BrowserRouter>
+               <div className="min-h-screen bg-background">
+                    <Navbar />
+                    <Routes>
+                         <Route path="/" element={<Home />} />
+                         <Route path="/article/:articleId" element={<ArticlePage />} />
+                         <Route path="/404" element={<NotFoundPage />} />
+                    </Routes>
+
+                    <Footer />
+               </div>
+          </BrowserRouter>
      );
 }
 
