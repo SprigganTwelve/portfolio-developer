@@ -3,7 +3,7 @@ import { articles } from "../../data/data";
 
 const TechnologyWatchSection = () => {
      return (
-          <section className="sq-pattern py-15">
+          <section id="techwatch" className="sq-pattern py-15">
                <div className="max-w-5xl mx-auto px-4">
                     <div className="mb-9">
                          <div>

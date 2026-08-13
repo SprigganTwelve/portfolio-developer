@@ -1,5 +1,5 @@
 const Footer = () => {
-     const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+     const smoothScrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
      return (
           <footer className="bg-black text-white">
@@ -53,7 +53,7 @@ const Footer = () => {
                                    </svg>
                               </a>
                               <button
-                                   onClick={scrollToTop}
+                                   onClick={smoothScrollToTop}
                                    className="text-sm hover:scale-120"
                                    aria-label="Retour en haut de la page"
                               >

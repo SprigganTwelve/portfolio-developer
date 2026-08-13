@@ -1,9 +1,9 @@
 import TimelineCard from "../../components/TimelineCard";
 import { timeline } from "../../data/data";
 
-const ExperienceTimeline = () => {
+const BackgroundTimelineSection = () => {
      return (
-          <section className="py-15">
+          <section id="background-timeline" className="py-15">
                <div className="max-w-5xl mx-auto px-4">
                     <div className="mb-9">
                          <p className="font-mono text-sm font-semibold text-muted mb-2"> {">"}- Expérience</p>
@@ -23,4 +23,4 @@ const ExperienceTimeline = () => {
      );
 };
 
-export default ExperienceTimeline;
+export default BackgroundTimelineSection;
