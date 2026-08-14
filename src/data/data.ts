@@ -1,4 +1,6 @@
-import tailwindContent from "./articles/tailwind-css.md?raw";
+import php8APIPlatformContent from "./articles/php8-symfony-api-platform.md?raw";
+import tailwindContent from "./articles/tailwind-css-20-80.md?raw";
+import workflowAgileDevSoloContent from "./articles/workflow-agile-dev-solo-github-actions.md?raw";
 
 export const techStack = [
      "React",
@@ -100,6 +102,52 @@ export const articles: Article[] = [
           imageUrl: "https://miro.medium.com/v2/resize:fit:1100/format:webp/0*Dc8tcF_RAaw0DWiK",
           tags: ["TailwindCSS", "React", "TypeScript"],
           content: tailwindContent,
+     },
+     {
+          id: "php8-symfony-api-platform-rest-api",
+          title: "Créer rapidement une API REST avec PHP 8, Symfony et API Platform",
+          date: "2026-08-14",
+          readingTime: 10,
+          categories: ["Backend", "API", "Symfony"],
+          summary: "Découvrez comment construire rapidement une API REST fiable et sécurisée avec PHP 8, Symfony et API Platform, puis l'exposer à un front-end React grâce à HTTP et JSON.",
+          tags: [
+               "PHP 8",
+               "Symfony",
+               "API Platform",
+               "REST API",
+               "Backend",
+               "Doctrine",
+               "Security",
+               "React",
+               "TypeScript",
+               "CORS",
+          ],
+          imageUrl: "https://api-platform.com/docs/images/opengraph-image.png",
+          content: php8APIPlatformContent,
+     },
+     {
+          id: "agile-workflow-developer-solo-github",
+          title: "Workflow Agile minimal pour un développeur solo : s'organiser avec GitHub",
+          date: "2026-08-09",
+          readingTime: 12,
+          categories: ["Development", "Productivity", "DevOps"],
+          summary: "Comment mettre en place un workflow agile minimal pour travailler efficacement seul sur ses projets personnels, en utilisant GitHub Issues, branches, Pull Requests, GitHub Actions et le déploiement automatisé.",
+          tags: [
+               "GitHub",
+               "GitHub Actions",
+               "Git",
+               "Agile",
+               "Developer Workflow",
+               "Productivity",
+               "CI/CD",
+               "DevOps",
+               "Pull Request",
+               "Issues",
+               "Continuous Deployment",
+          ],
+          imageUrl:
+               "https://cdn.shopaccino.com/igmguru/products/github-actions-course-5545043380044910m-59422727046295_l.webp?v=548",
+          content: workflowAgileDevSoloContent,
      },
 ];
 

@@ -4,7 +4,7 @@ import Button from "./ui/button";
 import Card from "./ui/card";
 import Tag from "./ui/tag";
 
-const ArticleCard = ({ article }: { article: Article }) => {
+const ArticleCard = ({ article, isMinimal = false }: { article: Article; isMinimal?: boolean }) => {
      const navigate = useNavigate();
      const dateFormatted = new Date(article.date).toLocaleDateString("fr-FR", {
           day: "numeric",
@@ -13,7 +13,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
      });
 
      return (
-          <Card className="flex flex-col p-0">
+          <Card className="flex flex-col p-0" hover={isMinimal} onClick={() => navigate(`/article/${article.id}`)}>
                <div className="overflow-hidden h-40 border-b-2">
                     <img
                          src={article.imageUrl}
@@ -31,12 +31,14 @@ const ArticleCard = ({ article }: { article: Article }) => {
                          ))}
                     </div>
                     <h3 className="font-display text-base font-black leading-snug">{article.title}</h3>
-                    <p className="text-sm text-muted font-body flex-1 leading-relaxed">{article.summary}</p>
+                    {!isMinimal && (
+                         <p className="text-sm text-muted font-body flex-1 leading-relaxed">{article.summary}</p>
+                    )}
                     <div className="flex items-center justify-between text-xs text-muted font-mono">
-                         <span>{dateFormatted}</span>
+                         {!isMinimal && <span>{dateFormatted}</span>}
                          <span>⏱ {article.readingTime} min</span>
                     </div>
-                    <Button onClick={() => navigate(`/article/${article.id}`)}>Lire l'article →</Button>
+                    {!isMinimal && <Button onClick={() => navigate(`/article/${article.id}`)}>Lire l'article →</Button>}
                </div>
           </Card>
      );

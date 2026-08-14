@@ -1,6 +1,7 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import ArticleCard from "../components/ArticleCard";
 import MarkdownRenderer from "../components/renderer/MarkdownRenderer";
 import Button from "../components/ui/button";
 import Card from "../components/ui/card";
@@ -12,6 +13,7 @@ const ArticlePage = () => {
      const navigate = useNavigate();
      let params = useParams();
      const article = articles.find((a) => a.id === params.articleId);
+     const others = articles.filter((a) => a.id !== params.articleId).slice(0, 2);
 
      const articleRef = useRef<HTMLElement | null>(null);
      const [scrolledPastMiddle, setScrolledPastMiddle] = useState(false);
@@ -144,13 +146,19 @@ const ArticlePage = () => {
                </article>
 
                {/* Related articles */}
-               <section className="max-w-3xl mx-auto px-4 py-12">
-                    <h2 className="font-display text-3xl mb-6">
-                         <span className="font-medium tracking-tight">Articles </span>
-                         <span className="text-primary-gradient font-extrabold tracking-tight">similaires</span>
-                    </h2>
-                    <div>...articles similaires...</div>
-               </section>
+               {others.length > 0 && (
+                    <section className="max-w-3xl mx-auto px-4 py-12">
+                         <h2 className="font-display text-3xl mb-6">
+                              <span className="font-medium tracking-tight">Autres </span>
+                              <span className="text-primary-gradient font-extrabold tracking-tight">articles</span>
+                         </h2>
+                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                              {others.map((article) => (
+                                   <ArticleCard key={article.id} article={article} isMinimal={true} />
+                              ))}
+                         </div>
+                    </section>
+               )}
                {/* Floating Action Button */}
                <Button
                     onClick={handleFabClick}
