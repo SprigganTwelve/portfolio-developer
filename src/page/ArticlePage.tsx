@@ -1,7 +1,7 @@
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import ReactMarkdown from "react-markdown";
 import { useNavigate, useParams } from "react-router";
+import MarkdownRenderer from "../components/renderer/MarkdownRenderer";
 import Button from "../components/ui/button";
 import Card from "../components/ui/card";
 import Tag from "../components/ui/tag";
@@ -126,7 +126,7 @@ const ArticlePage = () => {
                     </div>
 
                     {/* Content */}
-                    <ReactMarkdown>{article.content}</ReactMarkdown>
+                    <MarkdownRenderer content={article.content} />
 
                     {/* Author box */}
                     <Card className="mt-12 flex items-center gap-5 bg-foreground text-background">

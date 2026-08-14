@@ -1,11 +1,4 @@
-# Tailwind CSS : les 20 % à connaître pour maîtriser 80 % du framework
-
-> **Veille technologique — Front-End / CSS / React**  
-> *Temps de lecture : ~10 min*
-
----
-
-## Introduction
+# Introduction
 
 Écrire du CSS est relativement simple.
 
@@ -39,33 +32,29 @@ Dans cet article, nous allons voir :
 
 # 1. Tailwind CSS en quelques mots
 
-Tailwind CSS est un framework CSS **utility-first**.
+> Tailwind CSS est un framework CSS **utility-first**.
 
 Au lieu de créer une classe représentant un composant :
 
 ```css
 .button-primary {
-  background: #2563eb;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
+     background: #2563eb;
+     color: white;
+     padding: 8px 16px;
+     border-radius: 8px;
 }
 ```
 
 puis :
 
 ```html
-<button class="button-primary">
-  Se connecter
-</button>
+<button class="button-primary">Se connecter</button>
 ```
 
 Tailwind propose de composer directement les propriétés :
 
 ```html
-<button class="bg-blue-600 px-4 py-2 text-white rounded-lg">
-  Se connecter
-</button>
+<button class="bg-blue-600 px-4 py-2 text-white rounded-lg">Se connecter</button>
 ```
 
 Chaque classe représente généralement une responsabilité très précise :
@@ -168,9 +157,8 @@ Exemple :
 
 ```tsx
 <div className="flex items-center justify-between">
-  <span>Logo</span>
-
-  <nav>Menu</nav>
+     <span>Logo</span>
+     <nav>Menu</nav>
 </div>
 ```
 
@@ -191,7 +179,7 @@ Quelques classes à retenir :
 | `items-center` | `align-items: center` |
 | `justify-center` | `justify-content: center` |
 | `justify-between` | `justify-content: space-between` |
-| `gap-4` | `gap: 1rem` |
+| `gap-4`           | `gap: 1rem`                      |
 
 ### Grid
 
@@ -232,9 +220,7 @@ Par exemple :
 
 ```tsx
 <div className="p-6">
-  <div className="flex gap-4">
-    ...
-  </div>
+     <div className="flex gap-4">...</div>
 </div>
 ```
 
@@ -281,9 +267,7 @@ text-right
 Exemple :
 
 ```tsx
-<h1 className="text-4xl font-bold tracking-tight">
-  Build better interfaces.
-</h1>
+<h1 className="text-4xl font-bold tracking-tight">Build better interfaces.</h1>
 ```
 
 On peut également contrôler :
@@ -312,9 +296,7 @@ shadow-md
 Exemple :
 
 ```tsx
-<div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-  ...
-</div>
+<div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">...</div>
 ```
 
 On obtient rapidement un composant visuellement cohérent sans avoir à écrire une feuille CSS dédiée.
@@ -391,13 +373,15 @@ dark:
 Exemple :
 
 ```tsx
-<button className="
+<button
+     className="
   bg-blue-600
   hover:bg-blue-700
   focus:ring-2
   disabled:opacity-50
-">
-  Envoyer
+"
+>
+     Envoyer
 </button>
 ```
 
@@ -457,9 +441,7 @@ function Button({ children }) {
 Puis :
 
 ```tsx
-<Button>
-  Se connecter
-</Button>
+<Button>Se connecter</Button>
 ```
 
 La combinaison devient alors :
@@ -490,15 +472,15 @@ On peut écrire :
 
 ```css
 .card {
-  padding: 24px;
-  border-radius: 12px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+     padding: 24px;
+     border-radius: 12px;
+     background: white;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .card-title {
-  font-size: 20px;
-  font-weight: 600;
+     font-size: 20px;
+     font-weight: 600;
 }
 ```
 
@@ -586,13 +568,13 @@ CSS classique :
 
 ```css
 .card {
-  width: 100%;
+     width: 100%;
 }
 
 @media (min-width: 768px) {
-  .card {
-    width: 50%;
-  }
+     .card {
+          width: 50%;
+     }
 }
 ```
 
@@ -610,11 +592,11 @@ CSS :
 
 ```css
 .button:hover {
-  background: #1d4ed8;
+     background: #1d4ed8;
 }
 
 .button:disabled {
-  opacity: 0.5;
+     opacity: 0.5;
 }
 ```
 
