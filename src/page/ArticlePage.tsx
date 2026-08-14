@@ -4,6 +4,7 @@ import Button from "../components/ui/button";
 import Card from "../components/ui/card";
 import Tag from "../components/ui/tag";
 import { articles } from "../data/data";
+import { scrollToSection } from "../lib/scrollUtils";
 
 const ArticlePage = () => {
      const navigate = useNavigate();
@@ -16,7 +17,7 @@ const ArticlePage = () => {
                     <Card className="p-12 text-center max-w-120">
                          <div className="font-display text-6xl mb-4 text-primary-gradient">404</div>
                          <h1 className="font-display text-2xl mb-4">Article introuvable</h1>
-                         <Button onClick={() => navigate("/")} variant="black">
+                         <Button onClick={() => navigate("/#techwatch")} variant="black">
                               ← Retour au blog
                          </Button>
                     </Card>
@@ -29,6 +30,11 @@ const ArticlePage = () => {
           month: "long",
           year: "numeric",
      });
+
+     const backToBlog = () => {
+          navigate("/#techwatch");
+          setTimeout(() => scrollToSection("techwatch"), 60);
+     };
 
      return (
           <main className="min-h-screen pt-12">
@@ -66,8 +72,58 @@ const ArticlePage = () => {
                          </div>
                     </div>
                </section>
-               <article>
+
+               {/* Back */}
+               <div className="py-3 border-b-2">
+                    <div className="max-w-3xl mx-auto px-4">
+                         <button
+                              onClick={backToBlog}
+                              className="font-body text-sm font-semibold flex items-center gap-2 cursor-pointer"
+                         >
+                              ← Retour à la veille
+                         </button>
+                    </div>
+               </div>
+
+               {/* Article body */}
+               <article className="max-w-3xl mx-auto px-4 py-12">
+                    {/* Summary */}
+                    <Card className="mb-10 border-l-6 border-l-primary-start">
+                         <p className="font-body text-lg text-muted leading-relaxed italic">{article.summary}</p>
+                    </Card>
+
+                    {/* Tech tags */}
+                    <div className="flex flex-wrap gap-2 mb-8">
+                         {article.tags.map((t) => (
+                              <Tag key={t}>{t}</Tag>
+                         ))}
+                    </div>
+
+                    {/* Content */}
                     <ReactMarkdown>{article.content}</ReactMarkdown>
+
+                    {/* Author box */}
+                    <Card className="mt-12 flex items-center gap-5 bg-foreground text-background">
+                         <div className="bg-primary-gradient w-15 h-15 border-3 border-white" />
+                         <div>
+                              <div className="font-display font-black text-lg text-primary-gradient">Zouayobo DALI</div>
+                              <div className="font-mono text-xs text-gray-400 mb-1">
+                                   Développeur Full-Stack · Étudiant IPSSI
+                              </div>
+                              <p className="text-sm text-gray-400">
+                                   Passionné par le développement logiciel et les nouvelles technologies.
+                              </p>
+                         </div>
+                    </Card>
+
+                    {/* Related articles */}
+                    <section className="mt-16" aria-labelledby="related-heading">
+                         <h2 className="font-display text-3xl mb-6">
+                              <span className="font-medium tracking-tight">Articles </span>
+                              <span className="text-primary-gradient font-extrabold tracking-tight">similaires</span>
+                         </h2>
+                         <div>...articles similaires...</div>
+                    </section>
                </article>
           </main>
      );

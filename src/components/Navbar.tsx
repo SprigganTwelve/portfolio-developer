@@ -2,6 +2,7 @@ import { Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { cn } from "../lib/cn";
+import { scrollToSection } from "../lib/scrollUtils";
 import Button from "./ui/button";
 
 const navLinks: { label: string; sectionId: string }[] = [
@@ -49,11 +50,6 @@ const Navbar = () => {
 
           return () => observers.forEach((o) => o.disconnect());
      }, [pathname, activeSection]);
-
-     // Scroll helper that accounts for the fixed header height
-     const scrollToSection = (sectionId: string) => {
-          document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
-     };
 
      const handleNavClick = (sectionId: string) => {
           setMenuOpen(false);
