@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ children, className, style, variant = "defa
                className={cn(
                     "p-6 bg-background shadow-md",
                     variants[variant],
-                    (onClick || hover) &&
+                    hover &&
                          `cursor-pointer hover:-translate-y-0.5 hover:-translate-x-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-md ${timing}`,
                     className,
                )}
