@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import CodeBlock from "./CodeBlock";
 
 interface MarkdownRendererProps {
      content: string;
@@ -41,19 +42,31 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content }) => {
                          </a>
                     ),
 
-                    pre: ({ children }) => (
-                         <pre className="my-6 overflow-x-auto bg-primary-end p-5 text-sm leading-6 text-white shadow-md">
-                              {children}
-                         </pre>
-                    ),
+                    pre: ({ children }) => {
+                         return <>{children}</>;
+                    },
 
-                    code: ({ children }) => <code className="font-mono">{children}</code>,
+                    code: ({ children, className }) => {
+                         const language = className?.replace("language-", "");
+
+                         // Inline code
+                         if (!language) {
+                              return (
+                                   <code className="rounded-none bg-slate-200 px-1.5 py-0.5 font-mono text-sm">
+                                        {children}
+                                   </code>
+                              );
+                         }
+
+                         // Code block
+                         return <CodeBlock language={language}>{String(children)}</CodeBlock>;
+                    },
 
                     hr: () => <hr className="my-10 border-t border-muted" />,
 
                     // tables
                     table: ({ children }) => (
-                         <div className="my-8 overflow-x-auto border shadow-md">
+                         <div className="mt-3 mb-10 overflow-x-auto border shadow-md">
                               <table className="w-full border-collapse text-sm">{children}</table>
                          </div>
                     ),
