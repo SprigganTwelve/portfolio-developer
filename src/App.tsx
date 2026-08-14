@@ -23,7 +23,7 @@ function App() {
                     <Routes>
                          <Route path="/" element={<Home />} />
                          <Route path="/article/:articleId" element={<ArticlePage />} />
-                         <Route path="/404" element={<NotFoundPage />} />
+                         <Route path="*" element={<NotFoundPage />} />
                     </Routes>
 
                     <Footer />

@@ -1,3 +1,5 @@
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { useNavigate, useParams } from "react-router";
 import Button from "../components/ui/button";
@@ -10,6 +12,9 @@ const ArticlePage = () => {
      const navigate = useNavigate();
      let params = useParams();
      const article = articles.find((a) => a.id === params.articleId);
+
+     const articleRef = useRef<HTMLElement | null>(null);
+     const [scrolledPastMiddle, setScrolledPastMiddle] = useState(false);
 
      if (!article) {
           return (
@@ -34,6 +39,27 @@ const ArticlePage = () => {
      const backToBlog = () => {
           navigate("/#techwatch");
           setTimeout(() => scrollToSection("techwatch"), 60);
+     };
+
+     useEffect(() => {
+          const onScroll = () => {
+               const midPoint = window.scrollY + window.innerHeight / 2;
+               const pageMid = document.documentElement.scrollHeight / 2;
+               setScrolledPastMiddle(midPoint > pageMid);
+          };
+
+          window.addEventListener("scroll", onScroll, { passive: true });
+          onScroll();
+          return () => window.removeEventListener("scroll", onScroll);
+     }, []);
+
+     const handleFabClick = () => {
+          if (!articleRef.current) return;
+          if (!scrolledPastMiddle) {
+               articleRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+          } else {
+               articleRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
      };
 
      return (
@@ -86,7 +112,7 @@ const ArticlePage = () => {
                </div>
 
                {/* Article body */}
-               <article className="max-w-3xl mx-auto px-4 py-12">
+               <article ref={articleRef} className="max-w-3xl mx-auto px-4 py-12">
                     {/* Summary */}
                     <Card className="mb-10 border-l-6 border-l-primary-start">
                          <p className="font-body text-lg text-muted leading-relaxed italic">{article.summary}</p>
@@ -115,16 +141,29 @@ const ArticlePage = () => {
                               </p>
                          </div>
                     </Card>
-
-                    {/* Related articles */}
-                    <section className="mt-16" aria-labelledby="related-heading">
-                         <h2 className="font-display text-3xl mb-6">
-                              <span className="font-medium tracking-tight">Articles </span>
-                              <span className="text-primary-gradient font-extrabold tracking-tight">similaires</span>
-                         </h2>
-                         <div>...articles similaires...</div>
-                    </section>
                </article>
+
+               {/* Related articles */}
+               <section className="max-w-3xl mx-auto px-4 py-12">
+                    <h2 className="font-display text-3xl mb-6">
+                         <span className="font-medium tracking-tight">Articles </span>
+                         <span className="text-primary-gradient font-extrabold tracking-tight">similaires</span>
+                    </h2>
+                    <div>...articles similaires...</div>
+               </section>
+               {/* Floating Action Button */}
+               <Button
+                    onClick={handleFabClick}
+                    className="fixed bottom-10 right-6 w-12 h-12 border-3"
+                    variant="primary"
+                    size="icon"
+               >
+                    {scrolledPastMiddle ? (
+                         <ChevronUp strokeWidth={3} size={28} />
+                    ) : (
+                         <ChevronDown strokeWidth={3} size={28} />
+                    )}
+               </Button>
           </main>
      );
 };

@@ -1,6 +1,6 @@
-const Footer = () => {
-     const smoothScrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+import { smoothScrollToTop } from "../lib/scrollUtils";
 
+const Footer = () => {
      return (
           <footer className="bg-black text-white">
                <div className="accent-line" />
