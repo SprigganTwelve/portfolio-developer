@@ -1,4 +1,4 @@
-import { smoothScrollToTop } from "../lib/scrollUtils";
+import { smoothScrollToTop } from "../lib/uiUtils";
 
 const Footer = () => {
      return (

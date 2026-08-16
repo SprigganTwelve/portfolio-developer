@@ -3,7 +3,7 @@ import { cn } from "../../lib/cn";
 interface ButtonProps {
      children: React.ReactNode;
      onClick?: () => void;
-     variant?: "primary" | "black" | "ghost";
+     variant?: "primary" | "black" | "white" | "ghost";
      size?: "sm" | "md" | "lg" | "icon";
      className?: string;
      type?: "button" | "submit";
@@ -20,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
      const variantStyles: Record<string, string> = {
           primary: "bg-primary-gradient shadow-md transition-all hover:text-background hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
           black: "bg-foreground text-background hover:bg-background hover:text-foreground shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
+          white: "bg-background text-foreground hover:bg-foreground hover:text-background transition-all hover:-translate-y-0.5 active:translate-y-0.5",
           ghost: "border-none text-primary-gradient",
      };
      const sizeStyles: Record<string, string> = {

@@ -2,7 +2,7 @@ import { Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router";
 import { cn } from "../lib/cn";
-import { scrollToSection } from "../lib/scrollUtils";
+import { scrollToSection } from "../lib/uiUtils";
 import Button from "./ui/button";
 
 const navLinks: { label: string; sectionId: string }[] = [

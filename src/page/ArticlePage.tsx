@@ -7,7 +7,7 @@ import Button from "../components/ui/button";
 import Card from "../components/ui/card";
 import Tag from "../components/ui/tag";
 import { articles } from "../data/data";
-import { scrollToSection } from "../lib/scrollUtils";
+import { scrollToSection } from "../lib/uiUtils";
 
 const ArticlePage = () => {
      const navigate = useNavigate();
