@@ -1,8 +1,9 @@
 import { techStack } from "../../data/data";
+import { cn } from "../../lib/cn";
 
-const TechStackMarquee = () => {
+const TechStackMarquee = ({ className }: { className?: string }) => {
      return (
-          <div className="bg-black overflow-hidden py-3">
+          <div className={cn("bg-black overflow-hidden py-3", className)}>
                <div className="marquee-track">
                     {[...techStack, ...techStack].map((tech, i) => {
                          const skillColor =

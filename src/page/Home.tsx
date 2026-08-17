@@ -11,6 +11,7 @@ import TechStackMarquee from "./pagesections/TechStackMarquee";
 const Home = () => {
      return (
           <main>
+               <TechStackMarquee className="mt-12" />
                <Hero />
                <TechStackMarquee />
                <StatsSummary />
