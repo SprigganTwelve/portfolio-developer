@@ -17,16 +17,16 @@ const Hero = () => {
                                    Disponible pour une alternance Mastère
                               </Tag>
 
-                              <h1 className="font-display text-5xl md:text-7xl leading-[1.05] mb-4">
+                              <h1 className="font-display text-5xl lg:text-7xl leading-[1.05] mb-4">
                                    <span className="text-primary-gradient tracking-tight font-black">Zouayobo </span>
                                    <span className="tracking-tighter">DALI</span>
                               </h1>
 
-                              <div className="text-xl md:text-2xl font-semibold mb-5 inline-block bg-primary-start shadow-md border-2 px-4 py-1">
+                              <div className="text-xl lg:text-2xl font-semibold mb-5 inline-block bg-primary-start shadow-md border-2 px-4 py-1">
                                    Développeur Full-Stack
                               </div>
 
-                              <p className="text-base md:text-lg leading-relaxed mb-5 max-w-lg text-muted">
+                              <p className="text-base lg:text-lg leading-relaxed mb-5 max-w-lg text-muted">
                                    Étudiant en Bachelor Full-Stack à l&apos;IPSSI, passionné par la création
                                    d&apos;applications web et mobiles modernes. Je conçois des expériences numériques
                                    complètes, du back-end à l'interface utilisateur.

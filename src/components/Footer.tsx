@@ -6,7 +6,7 @@ const Footer = () => {
                <div className="accent-line" />
 
                <div className="max-w-7xl mx-auto px-4 py-12">
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-8 ">
+                    <div className="flex flex-col lg:flex-row items-center justify-center gap-8 ">
                          <div className="flex flex-col w-full">
                               <button className="text-primary-start/80 underline hover:text-white transition-discrete duration-200 cursor-pointer">
                                    <a href="mailto:angepaterne.dali@gmail.com">✉ angepaterne.dali@gmail.com</a>

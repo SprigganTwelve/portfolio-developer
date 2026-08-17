@@ -75,7 +75,7 @@ const Navbar = () => {
                     </button>
 
                     {/* Desktop nav links */}
-                    <div className="hidden md:flex items-center gap-2">
+                    <div className="hidden lg:flex items-center gap-2">
                          {navLinks.map((link) => {
                               return (
                                    <button
@@ -93,7 +93,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Desktop right actions */}
-                    <div className="hidden md:flex items-center gap-2">
+                    <div className="hidden lg:flex items-center gap-2">
                          <Button size="icon" variant="black" onClick={() => navigate("/404")}>
                               <Moon size={16} />
                          </Button>
@@ -120,7 +120,7 @@ const Navbar = () => {
                     </div>
 
                     {/* Mobile actions */}
-                    <div className="flex md:hidden items-center gap-2">
+                    <div className="flex lg:hidden items-center gap-2">
                          <Button size="icon" variant="black" onClick={() => navigate("/404")}>
                               <Moon size={16} />
                          </Button>
@@ -137,7 +137,7 @@ const Navbar = () => {
 
                {/* Mobile menu — hidden entirely on md+ */}
                {menuOpen && (
-                    <div className="md:hidden border-t-2 mb-2">
+                    <div className="lg:hidden border-t-2 mb-2">
                          <div className="flex flex-col gap-2 mt-2">
                               {navLinks.map((link) => {
                                    return (

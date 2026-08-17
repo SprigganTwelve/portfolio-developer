@@ -14,7 +14,7 @@ const TimelineCard = ({ entry, index }: { entry: TimelineEntry; index: number })
      const isLeft = index % 2 === 0;
 
      return (
-          <div className={cn("flex gap-4 md:gap-8", isLeft ? "md:flex-row" : "md:flex-row-reverse")}>
+          <div className={cn("flex gap-4 lg:gap-8", isLeft ? "lg:flex-row" : "lg:flex-row-reverse")}>
                {/* Card */}
                <div className="flex-1">
                     <Card variant={style.variant} hover={true} className="p-4">
@@ -51,7 +51,7 @@ const TimelineCard = ({ entry, index }: { entry: TimelineEntry; index: number })
                </div>
 
                {/* Spacer for alternating layout */}
-               <div className="flex-1 hidden md:block" />
+               <div className="flex-1 hidden lg:block" />
           </div>
      );
 };

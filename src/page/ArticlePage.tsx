@@ -90,7 +90,7 @@ const ArticlePage = () => {
                                    </Tag>
                               ))}
                          </div>
-                         <h1 className="font-display font-black text-3xl md:text-4xl text-white leading-tight">
+                         <h1 className="font-display font-black text-3xl lg:text-4xl text-white leading-tight">
                               {article.title}
                          </h1>
                          <div className="flex items-center gap-4 mt-3 font-mono text-sm text-gray-300">
