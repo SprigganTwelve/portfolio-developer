@@ -3,7 +3,7 @@ import { cn } from "../../lib/cn";
 
 const TechStackMarquee = ({ className }: { className?: string }) => {
      return (
-          <div className={cn("bg-black overflow-hidden py-3", className)}>
+          <div className={cn("relative bg-black overflow-hidden py-3 z-40", className)}>
                <div className="marquee-track">
                     {[...techStack, ...techStack].map((tech, i) => {
                          const skillColor =

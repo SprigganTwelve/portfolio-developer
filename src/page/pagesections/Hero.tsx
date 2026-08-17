@@ -3,7 +3,7 @@ import Tag from "../../components/ui/tag";
 
 const Hero = () => {
      return (
-          <section id="home" className="sq-pattern min-h-screen flex items-center pt-20 pb-15">
+          <section id="home" className="sq-pattern min-h-screen -mt-12 flex items-center pt-20 pb-15">
                <div className="max-w-7xl mx-auto px-4 py-5 w-full">
                     <div className="flex flex-row flex-wrap items-center justify-center gap-8 lg:gap-20">
                          {/* Text content */}
