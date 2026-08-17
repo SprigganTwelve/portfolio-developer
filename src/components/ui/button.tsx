@@ -7,6 +7,7 @@ interface ButtonProps {
      size?: "sm" | "md" | "lg" | "icon";
      className?: string;
      type?: "button" | "submit";
+     disabled?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -16,6 +17,7 @@ const Button: React.FC<ButtonProps> = ({
      size = "md",
      className,
      type = "button",
+     disabled = false,
 }) => {
      const variantStyles: Record<string, string> = {
           primary: "bg-primary-gradient shadow-md transition-all hover:text-background hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0.5 active:shadow-none",
@@ -38,6 +40,7 @@ const Button: React.FC<ButtonProps> = ({
                     sizeStyles[size],
                     className,
                )}
+               disabled={disabled}
           >
                {children}
           </button>

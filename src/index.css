@@ -39,6 +39,7 @@ body {
 
   --shadow-sm: 2px 2px 0px #0A0A0A;
   --shadow-md: 4px 4px 0px #0A0A0A;
+  --shadow-focus: 5px 5px 0px var(--primary-end);
   --shadow-lg: 6px 6px 0px #0A0A0A;
   --shadow-xl: 8px 8px 0px #0A0A0A;
 
@@ -79,6 +80,12 @@ body {
     font-size: var(--font-size);
     scroll-behavior: smooth;
   }
+
+  input,
+  textarea {
+    @apply border-2 w-full px-3 py-2 shadow-md transition-shadow duration-150 ease-in focus:shadow-(--shadow-focus) focus:outline-none placeholder:text-muted
+  }
+
 }
 
 @utility bg-primary-gradient {

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import ContactForm from "../../components/ContactForm";
 import Button from "../../components/ui/button";
 import Card from "../../components/ui/card";
 
@@ -88,7 +89,10 @@ const ContactSection = () => {
                          </div>
 
                          {/* Right: form */}
-                         <div className="p-6">FORM</div>
+                         <Card className="p-6 lg:p-8">
+                              <h3 className="font-display text-xl mb-6 font-extrabold">Envoyer un message</h3>
+                              <ContactForm />
+                         </Card>
                     </div>
                </div>
           </section>
