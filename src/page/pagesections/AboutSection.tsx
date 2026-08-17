@@ -15,7 +15,7 @@ const AboutSection = () => {
                               <span className="text-primary-gradient font-extrabold tracking-tight">je?</span>
                          </h2>
                     </div>
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-9">
                          <div>
                               <p className="text-gray-700 leading-relaxed mb-5">
                                    Je m'appelle Zouayobo Ange-Paterne DALI, étudiant en dernière année de Bachelor
@@ -33,61 +33,6 @@ const AboutSection = () => {
                                    En dehors du code, je me tiens à jour sur les nouvelles technologies, notamment en
                                    Big Data et IA — ma prochaine étape académique.
                               </p>
-
-                              {/* short boxes - soft skills */}
-                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-0.5">
-                                   {[
-                                        {
-                                             icon: "BadgeCheck",
-                                             variant: "pink",
-                                             title: "Qualité avant tout",
-                                             text: "Code propre, testé, documenté.",
-                                        },
-                                        {
-                                             icon: "GraduationCap",
-                                             variant: "blue",
-                                             title: "Apprentissage continu",
-                                             text: "Veille tech active, curiosité permanente.",
-                                        },
-                                        {
-                                             icon: "Handshake",
-                                             variant: "blue",
-                                             title: "Travail d'équipe",
-                                             text: "Agile, communication, collaboration.",
-                                        },
-                                        {
-                                             icon: "Lightbulb",
-                                             variant: "pink",
-                                             title: "Créativité",
-                                             text: "Solutions élégantes aux problèmes complexes.",
-                                        },
-                                   ].map((v) => {
-                                        const Icon = getIcon(v.icon);
-                                        return (
-                                             <Card
-                                                  className="p-3 w-56"
-                                                  hover={true}
-                                                  variant={v.variant as UIComponentVariant}
-                                             >
-                                                  <div
-                                                       aria-hidden="true"
-                                                       style={{ fontSize: "1.5rem", marginBottom: "0.4rem" }}
-                                                  >
-                                                       <Icon
-                                                            size={20}
-                                                            className={cn(
-                                                                 v.variant === "pink"
-                                                                      ? "text-primary-start"
-                                                                      : "text-primary-end",
-                                                            )}
-                                                       />
-                                                  </div>
-                                                  <div className="font-display text-sm mb-1 font-black">{v.title}</div>
-                                                  <div className="text-xs text-muted">{v.text}</div>
-                                             </Card>
-                                        );
-                                   })}
-                              </div>
                          </div>
 
                          {/* quick facts */}
@@ -153,6 +98,51 @@ const AboutSection = () => {
                                    </a>
                               </div>
                          </Card>
+                    </div>
+                    {/* short boxes - soft skills */}
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 p-0.5">
+                         {[
+                              {
+                                   icon: "BadgeCheck",
+                                   variant: "pink",
+                                   title: "Qualité avant tout",
+                                   text: "Code propre, testé, documenté.",
+                              },
+                              {
+                                   icon: "GraduationCap",
+                                   variant: "blue",
+                                   title: "Apprentissage continu",
+                                   text: "Veille tech active, curiosité permanente.",
+                              },
+                              {
+                                   icon: "Handshake",
+                                   variant: "blue",
+                                   title: "Travail d'équipe",
+                                   text: "Agile, communication, collaboration.",
+                              },
+                              {
+                                   icon: "Lightbulb",
+                                   variant: "pink",
+                                   title: "Créativité",
+                                   text: "Solutions élégantes aux problèmes complexes.",
+                              },
+                         ].map((v) => {
+                              const Icon = getIcon(v.icon);
+                              return (
+                                   <Card className="p-3 w-56" hover={true} variant={v.variant as UIComponentVariant}>
+                                        <div aria-hidden="true" style={{ fontSize: "1.5rem", marginBottom: "0.4rem" }}>
+                                             <Icon
+                                                  size={20}
+                                                  className={cn(
+                                                       v.variant === "pink" ? "text-primary-start" : "text-primary-end",
+                                                  )}
+                                             />
+                                        </div>
+                                        <div className="font-display text-sm mb-1 font-black">{v.title}</div>
+                                        <div className="text-xs text-muted">{v.text}</div>
+                                   </Card>
+                              );
+                         })}
                     </div>
                </div>
           </section>
