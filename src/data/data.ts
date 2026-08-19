@@ -162,3 +162,55 @@ export interface Article {
      imageUrl: string;
      tags: string[];
 }
+
+export const skillGroups: SkillGroup[] = [
+     {
+          category: "Front-End",
+          colorClass: "pink",
+          description:
+               "Interfaces rapides, accessibles et soignées. Composants réutilisables, design systems, animations CSS et performances Lighthouse.",
+          skills: ["React / React Native", "TypeScript", "Vue.js", "Tailwind CSS", "HTML5 / CSS3", "Next.js"],
+     },
+     {
+          category: "Back-End",
+          colorClass: "blue",
+          description:
+               "APIs REST et GraphQL, gestion des bases de données, authentification JWT et déploiement serveur. Du schéma au endpoint en production.",
+          skills: ["Node.js / Express", "Python / FastAPI", "PHP / Laravel", "REST API", "GraphQL"],
+     },
+     {
+          category: "Mobile",
+          colorClass: "pink",
+          description:
+               "Applications cross-platform iOS et Android avec React Native et Expo. Navigation fluide, notifications push et intégration Firebase.",
+          skills: ["React Native", "Expo", "Firebase"],
+     },
+     {
+          category: "Bases de données",
+          colorClass: "blue",
+          description:
+               "Modélisation relationnelle et NoSQL, requêtes optimisées, indexation et gestion des migrations. SQL comme NoSQL selon le besoin.",
+          skills: ["PostgreSQL", "MySQL", "MongoDB", "Firebase / Firestore", "Redis"],
+     },
+     {
+          category: "DevOps & Outils",
+          colorClass: "pink",
+          description:
+               "Versioning Git, conteneurisation Docker, pipelines CI/CD et maquettage Figma. Du poste de dev jusqu'au déploiement, sans rupture.",
+          skills: ["Git / GitHub", "Docker", "GitHub Actions", "Figma", "Linux / Shell"],
+     },
+     {
+          category: "Concepts logiciels",
+          colorClass: "blue",
+          description:
+               "Architecture propre, patterns éprouvés et méthodes agiles. Écrire du code que l'on peut lire, tester et faire évoluer dans le temps.",
+          skills: ["Architecture MVC", "Clean Code / SOLID", "Agile / Scrum", "Design Patterns", "Tests unitaires"],
+     },
+];
+
+export interface SkillGroup {
+     category: string;
+     colorClass: "blue" | "pink";
+     description: string;
+     skills: string[];
+}
