@@ -7,4 +7,10 @@ RUN npm run build
 
 FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
+
+# hot reload
+ENV WATCHPACK_POLLING=true
+ENV FAST_REFRESH=true
+ENV CHOKIDAR_USEPOLLING=true
+
 EXPOSE 80

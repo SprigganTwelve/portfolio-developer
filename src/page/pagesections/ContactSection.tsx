@@ -23,8 +23,8 @@ const ContactSection = () => {
                               </div>
                               {/* short paragraph */}
                               <p className="font-body text-muted leading-relaxed mb-7">
-                                   Je suis actuellement à la recherche d&apos;une alternance pour un Mastère en Big Data
-                                   & IA. N&apos;hésitez pas à me contacter pour toute opportunité ou collaboration.
+                                   Je suis actuellement à la recherche d'une alternance pour un Mastère en Big Data
+                                   & IA. N'hésitez pas à me contacter pour toute opportunité ou collaboration.
                               </p>
                               {/* for quick contact */}
                               <div className="flex flex-col gap-4">

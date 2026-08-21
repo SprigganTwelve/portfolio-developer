@@ -27,8 +27,8 @@ const Hero = () => {
                               </div>
 
                               <p className="text-base lg:text-lg leading-relaxed mb-5 max-w-lg text-muted">
-                                   Étudiant en Bachelor Full-Stack à l&apos;IPSSI, passionné par la création
-                                   d&apos;applications web et mobiles modernes. Je conçois des expériences numériques
+                                   Étudiant en Bachelor Full-Stack à l'IPSSI, passionné par la création
+                                   d'applications web et mobiles modernes. Je conçois des expériences numériques
                                    complètes, du back-end à l'interface utilisateur.
                               </p>
 
